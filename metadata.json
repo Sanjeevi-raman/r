@@ -1,0 +1,9 @@
+
+{
+  "name": "ProPortfolio-IT",
+  "description": "A high-performance, professional portfolio for IT professionals and students featuring AI-powered interaction, project showcases, and career timelines.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
