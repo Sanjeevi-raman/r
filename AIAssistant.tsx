@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from '@google/genai';
 // Use getter functions for dynamic data retrieval
-import { getPersonalInfo, getProjects, getExperiences, getSkills } from '../constants';
+import { getPersonalInfo, getProjects, getExperiences, getSkills } from './constants';
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,16 +55,22 @@ const AIAssistant: React.FC = () => {
 
       // Call generateContent with model name and prompt directly
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: userMessage,
-        config: {
-          systemInstruction: systemPrompt,
+        model: 'gemini-2.0-flash',
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: userMessage }]
+          }
+        ],
+        systemInstruction: systemPrompt,
+        generationConfig: {
           temperature: 0.5,
         }
       });
 
-      // Extract text from the property, not a method
-      setMessages(prev => [...prev, {role: 'bot', text: response.text || "I apologize, I was unable to retrieve that information."}]);
+      // Extract text from the response
+      const textContent = response.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, I was unable to retrieve that information.";
+      setMessages(prev => [...prev, {role: 'bot', text: textContent}]);
     } catch (error) {
       console.error(error);
       setMessages(prev => [...prev, {role: 'bot', text: "System connection error. Please try again."}]);
