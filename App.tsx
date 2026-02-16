@@ -1,15 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Certificates from './components/Certificates';
-import Friends from './components/Friends';
-import Contact from './components/Contact';
-import AIAssistant from './components/AIAssistant';
-import ResumeViewer from './components/ResumeViewer';
+import Navbar from './Navbar';
+import About from './About';
+import Skills from './Skills';
+import Experience from './Experience';
+import Projects from './Projects';
+import Certificates from './Certificates';
+import Friends from './Friends';
+import Contact from './Contact';
+import AIAssistant from './AIAssistant';
+import ResumeViewer from './ResumeViewer';
 import { getUIConfig, getPersonalInfo, getSkills, getExperiences, getFriends, getProjects, getCertificates } from './constants';
 
 const App: React.FC = () => {

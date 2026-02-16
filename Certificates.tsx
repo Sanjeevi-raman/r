@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Certificate } from '../types';
+import { Certificate } from './types';
 
 interface CertificatesProps {
   certificates: Certificate[];

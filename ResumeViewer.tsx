@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Experience, UIConfig } from '../types';
+import { Experience, UIConfig } from './types';
 
 interface ResumeViewerProps {
   onClose: () => void;

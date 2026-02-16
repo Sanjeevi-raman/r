@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Friend } from '../types';
+import { Friend } from './types';
 
 interface FriendsProps {
   friends: Friend[];

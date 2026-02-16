@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Project } from '../types';
+import { Project } from './types';
 
 interface ProjectsProps {
   projects: Project[];
