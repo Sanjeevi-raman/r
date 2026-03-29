@@ -23,10 +23,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install              # ← CHANGE THIS (was: npm ci)
+        run: npm i             # ← CHANGE THIS (was: npm ci)
 
       - name: Build portfolio
-        run: npm run build
+        run: npm run dev
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
